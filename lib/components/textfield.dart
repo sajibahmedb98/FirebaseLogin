@@ -5,10 +5,12 @@ class UserTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.obscuredtext,
+    required this.textEditingController
   });
 
   final String hintText;
   final bool obscuredtext;
+  final TextEditingController textEditingController;
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +19,11 @@ class UserTextField extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.grey[300],
+          color: Colors.grey[200],
           borderRadius: BorderRadius.circular(12),
         ),
         child: TextField(
+          controller: textEditingController,
           obscureText: obscuredtext,
           decoration: InputDecoration(
               border: InputBorder.none,
